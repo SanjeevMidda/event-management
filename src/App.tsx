@@ -45,12 +45,6 @@ function App() {
 
   const handleEditEvent = (event: Event) => {
     setEventToEdit(event);
-
-    window.scrollTo({
-      top: 0,
-
-      behavior: "smooth",
-    });
   };
 
   const handleDeleteEvent = (id: number) => {
