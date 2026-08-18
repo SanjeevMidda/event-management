@@ -15,7 +15,7 @@ describe("validateEvent", () => {
 
   test("returns an error when date is in the past", () => {
     const errors = validateEvent(
-      "React Workshop",
+      "React Meetup",
       "Some description",
       "2020-01-01"
     );

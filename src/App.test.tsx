@@ -7,11 +7,13 @@ describe("Event Management App", () => {
   test("displays existing events", () => {
     render(<App />);
 
-    expect(screen.getByText("React Workshop")).toBeInTheDocument();
+    expect(screen.getByText("React Meetup")).toBeInTheDocument();
 
-    expect(screen.getByText("Product Meetup")).toBeInTheDocument();
+    expect(screen.getByText("TypeScript Workshop")).toBeInTheDocument();
 
-    expect(screen.getByText("Tech Conference")).toBeInTheDocument();
+    expect(
+      screen.getByText("Product Management Conference")
+    ).toBeInTheDocument();
   });
 
   test("deletes an event", async () => {
