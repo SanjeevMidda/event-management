@@ -2,9 +2,9 @@ import {
   getUpcomingEventCount,
   sortEventsByDate,
   validateEvent,
-} from "./eventUtils";
+} from "../eventUtils";
 
-import { Event } from "../data/events";
+import { Event } from "../../data/events";
 
 describe("validateEvent", () => {
   test("returns an error when title is empty", () => {

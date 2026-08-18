@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import EventForm from "./EventForm";
+import EventForm from "../EventForm";
 
 describe("EventForm", () => {
   const setup = () => {
@@ -70,4 +70,41 @@ describe("EventForm", () => {
       })
     );
   });
+});
+
+test("populates the form when editing an event", () => {
+  const event = {
+    id: 1,
+    title: "Existing Event",
+    description: "Existing description",
+    date: "2026-12-01",
+    location: "London",
+  };
+
+  const onSave = jest.fn();
+  const onCancelEdit = jest.fn();
+
+  render(
+    <EventForm
+      eventToEdit={event}
+      onSave={onSave}
+      onCancelEdit={onCancelEdit}
+    />
+  );
+
+  expect(screen.getByLabelText(/title/i)).toHaveValue("Existing Event");
+
+  expect(screen.getByLabelText(/description/i)).toHaveValue(
+    "Existing description"
+  );
+
+  expect(screen.getByLabelText(/date/i)).toHaveValue("2026-12-01");
+
+  expect(screen.getByLabelText(/location/i)).toHaveValue("London");
+
+  expect(
+    screen.getByRole("button", {
+      name: /save changes/i,
+    })
+  ).toBeInTheDocument();
 });
