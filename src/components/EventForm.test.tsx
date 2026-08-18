@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import EventForm from "../EventForm";
+import EventForm from "./EventForm";
 
 describe("EventForm", () => {
   const setup = () => {
