@@ -46,3 +46,16 @@ export const sortEventsByDate = (events: Event[]): Event[] => {
       new Date(`${b.date}T00:00:00`).getTime()
   );
 };
+
+// get upcoming events
+export const getUpcomingEventCount = (events: Event[]): number => {
+  const today = new Date();
+
+  today.setHours(0, 0, 0, 0);
+
+  return events.filter((event) => {
+    const eventDate = new Date(`${event.date}T00:00:00`);
+
+    return eventDate >= today;
+  }).length;
+};
