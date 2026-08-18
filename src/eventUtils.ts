@@ -6,6 +6,7 @@ export interface ValidationErrors {
   description?: string;
 }
 
+// event validation
 export const validateEvent = (
   title: string,
   description: string,
@@ -35,4 +36,13 @@ export const validateEvent = (
   }
 
   return errors;
+};
+
+// sort events by date
+export const sortEventsByDate = (events: Event[]): Event[] => {
+  return [...events].sort(
+    (a, b) =>
+      new Date(`${a.date}T00:00:00`).getTime() -
+      new Date(`${b.date}T00:00:00`).getTime()
+  );
 };
