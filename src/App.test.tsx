@@ -23,7 +23,7 @@ describe("Event Management App", () => {
 
     render(<App />);
 
-    expect(screen.getByText("React Workshop")).toBeInTheDocument();
+    expect(screen.getByText("React Meetup")).toBeInTheDocument();
 
     const deleteButtons = screen.getAllByRole("button", {
       name: /delete/i,
