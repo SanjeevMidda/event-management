@@ -1,4 +1,4 @@
-import { Event } from "./data/events";
+import { Event } from "../data/events";
 
 export interface ValidationErrors {
   title?: string;
